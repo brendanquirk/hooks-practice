@@ -1,19 +1,11 @@
-import React, { Component } from 'react';
+import React, { useContext } from 'react';
 import {ThemeContext} from '../contexts/ThemeContext'
 
 
 function ThemeToggle () {
-  // static contextType = ThemeContext;
-    // console.log(this.context);
+    const { handleToggle } = useContext(ThemeContext)
     return (
-      <ThemeContext.Consumer>{(context) => {
-        // console.log(context);
-        const { handleToggle } = context
-        return(
-          <button onClick={handleToggle}>Toggle Theme</button>
-        )
-      }}
-      </ThemeContext.Consumer>
+      <button onClick={handleToggle}>Toggle Theme</button>
     );
 };
 
